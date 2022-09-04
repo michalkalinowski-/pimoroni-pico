@@ -8,8 +8,8 @@
 #include "pico_scroll_font.hpp"
 
 enum pin {
-  SDA   =  21,
-  SCL   =  22,
+  SDA   =  24,
+  SCL   =  25,
   A     = 12,
   B     = 13,
   X     = 14,
@@ -37,7 +37,7 @@ namespace pimoroni {
 
   void PicoScroll::init() {
     // setup i2c interface
-    i2c_init(i2c0, 400000);
+    i2c_init(i2c1, 400000);
 
     gpio_set_function(pin::SDA, GPIO_FUNC_I2C); gpio_pull_up(pin::SDA);
     gpio_set_function(pin::SCL, GPIO_FUNC_I2C); gpio_pull_up(pin::SCL);
